@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Go",
+        "type": "go",
+        "debugAdapter": "dlv-dap",
+        "request": "attach",
+        "mode": "remote",
+        "cwd": "${workspaceFolder}/server",
+        "port": 2345,
+        "host": "0.0.0.0",
+        "showLog": true,
+      }
+    ]
+  }

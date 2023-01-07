@@ -1,0 +1,59 @@
+{
+  "name": "Go devcontainer",
+  "build": {
+    "dockerfile": "../Dockerfile.dev",
+    "target": "dev"
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"
+  ],
+  "workspaceFolder": "/app",
+  "appPort": ["7777:8080", "3434:3000"],
+  "settings": {
+    "editor.tabSize": 2,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.renderWhitespace": "all",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "go.toolsManagement.checkForUpdates": "off",
+    "go.inferGopath": true,
+    "go.useLanguageServer": true,
+    "eslint.packageManager": "yarn",
+    "eslint.run": "onSave",
+    "eslint.nodePath": "/app/client",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "[go]": {
+      "editor.defaultFormatter": "golang.go",
+      "editor.insertSpaces": true,
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+      },
+      "editor.suggest.snippetsPreventQuickSuggestions": false
+    },
+    "[javascript]": {
+      "editor.formatOnSave": true
+    },
+    "[typescript]": {
+      "editor.formatOnSave": true
+    },
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ]
+  },
+  "extensions": [
+    "golang.go",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+  ],
+  "shutdownAction": "none"
+}
